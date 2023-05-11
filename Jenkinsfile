@@ -6,11 +6,7 @@ pipeline {
     }
     stages {
 
-	stage('Checkout') {
-		git branch: 'main',
-		url: 'https://github.com/sfeary/do400-pipelines-control'
-    	}
-        stage('Run Tests') {
+	stage('Run Tests') {
             parallel {
                     stage('Backend Tests') {
                         steps {
